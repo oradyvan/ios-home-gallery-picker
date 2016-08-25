@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="HCAImageCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="idz-3Q-atB">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3S-lk-TB3" userLabel="Selection Vieqw">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_picker_checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="DS7-Vd-kLT">
+                                <rect key="frame" x="4" y="172" width="24" height="24"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="DS7-Vd-kLT" secondAttribute="bottom" constant="4" id="Iuc-ao-Yva"/>
+                            <constraint firstItem="DS7-Vd-kLT" firstAttribute="leading" secondItem="T3S-lk-TB3" secondAttribute="leading" constant="4" id="nWV-Gt-RtS"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="T3S-lk-TB3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="4vX-Qo-Pye"/>
+                <constraint firstItem="T3S-lk-TB3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8FK-SG-KiI"/>
+                <constraint firstAttribute="trailing" secondItem="idz-3Q-atB" secondAttribute="trailing" id="DWe-kR-suI"/>
+                <constraint firstAttribute="bottom" secondItem="T3S-lk-TB3" secondAttribute="bottom" id="eYa-QI-EVa"/>
+                <constraint firstItem="idz-3Q-atB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fx2-0X-Ec2"/>
+                <constraint firstAttribute="bottom" secondItem="idz-3Q-atB" secondAttribute="bottom" id="ktc-7l-4A9"/>
+                <constraint firstAttribute="trailing" secondItem="T3S-lk-TB3" secondAttribute="trailing" id="tXb-qG-Qyj"/>
+                <constraint firstItem="idz-3Q-atB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uuc-kR-WMn"/>
+            </constraints>
+            <size key="customSize" width="318" height="269"/>
+            <connections>
+                <outlet property="imageView" destination="idz-3Q-atB" id="Grh-tK-uiV"/>
+                <outlet property="selectionOverlayView" destination="T3S-lk-TB3" id="rjE-fK-Xqo"/>
+            </connections>
+            <point key="canvasLocation" x="607" y="458.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="image_picker_checkmark" width="24" height="24"/>
+    </resources>
+</document>
