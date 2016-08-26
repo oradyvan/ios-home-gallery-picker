@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9ABC87B21D7028EB00FF7A72 /* HCASingleImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC87B11D7028EB00FF7A72 /* HCASingleImagePicker.swift */; };
 		9ABE16F61D01B88500A6D46E /* HCAAssetCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABE16F41D01B88500A6D46E /* HCAAssetCollection.h */; };
 		9ABE16F71D01B88500A6D46E /* HCAAssetCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE16F51D01B88500A6D46E /* HCAAssetCollection.m */; };
 		9AE6E1A81C4659E600566F8D /* HCAGalleryImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE6E19D1C4659E600566F8D /* HCAGalleryImagePicker.framework */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9ABC87B11D7028EB00FF7A72 /* HCASingleImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCASingleImagePicker.swift; sourceTree = "<group>"; };
 		9ABE16F41D01B88500A6D46E /* HCAAssetCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCAAssetCollection.h; sourceTree = "<group>"; };
 		9ABE16F51D01B88500A6D46E /* HCAAssetCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCAAssetCollection.m; sourceTree = "<group>"; };
 		9AE6E19D1C4659E600566F8D /* HCAGalleryImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HCAGalleryImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 		9AE6E19F1C4659E600566F8D /* HCAGalleryImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				9ABC87B11D7028EB00FF7A72 /* HCASingleImagePicker.swift */,
 				9AE6E1E41C465A5D00566F8D /* HCAGalleryImagePicker.h */,
 				9AE6E1B71C465A2900566F8D /* HCAAlbumTableViewCell.h */,
 				9AE6E1B81C465A2900566F8D /* HCAAlbumTableViewCell.m */,
@@ -200,6 +203,7 @@
 		9AE6E1941C4659E600566F8D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Swisscom;
 				TargetAttributes = {
@@ -258,6 +262,7 @@
 				9AE6E1D61C465A2900566F8D /* HCAGalleryImagePickerViewController.m in Sources */,
 				9AE6E1E11C465A2900566F8D /* HCAPhotosCollectionViewController.m in Sources */,
 				9AE6E1CE1C465A2900566F8D /* HCAAlbumTableViewCell.m in Sources */,
+				9ABC87B21D7028EB00FF7A72 /* HCASingleImagePicker.swift in Sources */,
 				9AE6E1D11C465A2900566F8D /* HCAAssetsLibrary.m in Sources */,
 				9AE6E1D31C465A2900566F8D /* HCAGalleryAlbumsViewController.m in Sources */,
 				9AE6E1D81C465A2900566F8D /* HCAImageCollectionViewCell.m in Sources */,
@@ -379,6 +384,7 @@
 		9AE6E1B21C4659E600566F8D /* Live_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -390,12 +396,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swisscom.HCAGalleryImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Live_Debug;
 		};
 		9AE6E1B31C4659E600566F8D /* Live_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -482,6 +490,7 @@
 		9AE6E1F11C465CFE00566F8D /* Dev_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -493,6 +502,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swisscom.HCAGalleryImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Dev_Debug;
 		};
@@ -558,6 +568,7 @@
 		9AE6E1F41C465D2700566F8D /* Live_Debug_Calabash */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -569,6 +580,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swisscom.HCAGalleryImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Live_Debug_Calabash;
 		};
@@ -629,6 +641,7 @@
 		9AE6E1F71C465D3B00566F8D /* Dev_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
