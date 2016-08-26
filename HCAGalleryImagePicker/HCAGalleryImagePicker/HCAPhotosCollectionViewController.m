@@ -43,8 +43,8 @@ static NSString * const reuseIdentifier = @"Cell";
     
     self.collectionView.allowsMultipleSelection = YES;
     
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([HCAImageCollectionViewCell class])
-                                                    bundle:[NSBundle bundleWithIdentifier:HCAGalleryImagePickerBundleIdentifier]] forCellWithReuseIdentifier:reuseIdentifier];
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass([HCAImageCollectionViewCell class]) bundle:[NSBundle bundleForClass:[HCAImageCollectionViewCell class]]];
+    [self.collectionView registerNib:nib forCellWithReuseIdentifier:reuseIdentifier];
 }
 
 - (void)viewWillAppear:(BOOL)animated

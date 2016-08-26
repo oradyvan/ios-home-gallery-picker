@@ -18,7 +18,7 @@
 
 + (instancetype)startPickingPhotosFromViewContorller:(UIViewController *)viewController completion:(HCAImagePickerSelectionResultBlock)completion
 {
-    HCAGalleryImagePickerViewController *imagePickerViewController = [[UIStoryboard storyboardWithName:@"HCAImagePicker" bundle:[NSBundle bundleWithIdentifier:HCAGalleryImagePickerBundleIdentifier]] instantiateInitialViewController];
+    HCAGalleryImagePickerViewController *imagePickerViewController = [[UIStoryboard storyboardWithName:@"HCAImagePicker" bundle:[NSBundle bundleForClass:self]] instantiateInitialViewController];
     imagePickerViewController.completeSelectionHandler = completion;
     [viewController presentViewController:imagePickerViewController animated:YES completion:NULL];
     return imagePickerViewController;

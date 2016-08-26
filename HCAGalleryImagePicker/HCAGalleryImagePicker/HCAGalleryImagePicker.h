@@ -16,9 +16,4 @@ FOUNDATION_EXPORT const unsigned char HCAGalleryImagePickerVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <HCAGalleryImagePicker/PublicHeader.h>
 
-static NSString *const HCAGalleryImagePickerBundleIdentifier = @"com.swisscom.HCAGalleryImagePicker";
-
-static NSString *const HCAAlbumsTableViewControllerIdentifier = @"HCAAlbumsTableViewController";
-static NSString *const HCAPhotosCollectionViewControllerIdentifier = @"HCAPhotosCollectionViewController";
-
 #import <HCAGalleryImagePicker/HCAGalleryImagePickerViewController.h>
