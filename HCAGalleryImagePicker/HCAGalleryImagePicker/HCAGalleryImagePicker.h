@@ -21,4 +21,4 @@ static NSString *const HCAGalleryImagePickerBundleIdentifier = @"com.swisscom.HC
 static NSString *const HCAAlbumsTableViewControllerIdentifier = @"HCAAlbumsTableViewController";
 static NSString *const HCAPhotosCollectionViewControllerIdentifier = @"HCAPhotosCollectionViewController";
 
-#import <HCAGalleryImagePicker/HCAImagePickerController.h>
+#import <HCAGalleryImagePicker/HCAGalleryImagePickerViewController.h>

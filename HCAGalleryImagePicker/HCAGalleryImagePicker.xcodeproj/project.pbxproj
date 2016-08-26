@@ -18,14 +18,12 @@
 		9AE6E1D11C465A2900566F8D /* HCAAssetsLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6E1BB1C465A2900566F8D /* HCAAssetsLibrary.m */; };
 		9AE6E1D21C465A2900566F8D /* HCAGalleryAlbumsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1BC1C465A2900566F8D /* HCAGalleryAlbumsViewController.h */; };
 		9AE6E1D31C465A2900566F8D /* HCAGalleryAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6E1BD1C465A2900566F8D /* HCAGalleryAlbumsViewController.m */; };
-		9AE6E1D51C465A2900566F8D /* HCAGalleryImagePickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1BF1C465A2900566F8D /* HCAGalleryImagePickerViewController.h */; };
+		9AE6E1D51C465A2900566F8D /* HCAGalleryImagePickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1BF1C465A2900566F8D /* HCAGalleryImagePickerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9AE6E1D61C465A2900566F8D /* HCAGalleryImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6E1C01C465A2900566F8D /* HCAGalleryImagePickerViewController.m */; };
 		9AE6E1D71C465A2900566F8D /* HCAImageCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1C11C465A2900566F8D /* HCAImageCollectionViewCell.h */; };
 		9AE6E1D81C465A2900566F8D /* HCAImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6E1C21C465A2900566F8D /* HCAImageCollectionViewCell.m */; };
 		9AE6E1D91C465A2900566F8D /* HCAImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AE6E1C31C465A2900566F8D /* HCAImageCollectionViewCell.xib */; };
 		9AE6E1DA1C465A2900566F8D /* HCAImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE6E1C41C465A2900566F8D /* HCAImagePicker.storyboard */; };
-		9AE6E1DB1C465A2900566F8D /* HCAImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1C51C465A2900566F8D /* HCAImagePickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9AE6E1DC1C465A2900566F8D /* HCAImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6E1C61C465A2900566F8D /* HCAImagePickerController.m */; };
 		9AE6E1E01C465A2900566F8D /* HCAPhotosCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1CA1C465A2900566F8D /* HCAPhotosCollectionViewController.h */; };
 		9AE6E1E11C465A2900566F8D /* HCAPhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6E1CB1C465A2900566F8D /* HCAPhotosCollectionViewController.m */; };
 		9AE6E1E61C465A5D00566F8D /* HCAGalleryImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1E41C465A5D00566F8D /* HCAGalleryImagePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -61,8 +59,6 @@
 		9AE6E1C21C465A2900566F8D /* HCAImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCAImageCollectionViewCell.m; sourceTree = "<group>"; };
 		9AE6E1C31C465A2900566F8D /* HCAImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HCAImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		9AE6E1C41C465A2900566F8D /* HCAImagePicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HCAImagePicker.storyboard; sourceTree = "<group>"; };
-		9AE6E1C51C465A2900566F8D /* HCAImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCAImagePickerController.h; sourceTree = "<group>"; };
-		9AE6E1C61C465A2900566F8D /* HCAImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCAImagePickerController.m; sourceTree = "<group>"; };
 		9AE6E1CA1C465A2900566F8D /* HCAPhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCAPhotosCollectionViewController.h; sourceTree = "<group>"; };
 		9AE6E1CB1C465A2900566F8D /* HCAPhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCAPhotosCollectionViewController.m; sourceTree = "<group>"; };
 		9AE6E1CC1C465A2900566F8D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,8 +119,6 @@
 				9AE6E1C21C465A2900566F8D /* HCAImageCollectionViewCell.m */,
 				9AE6E1C31C465A2900566F8D /* HCAImageCollectionViewCell.xib */,
 				9AE6E1C41C465A2900566F8D /* HCAImagePicker.storyboard */,
-				9AE6E1C51C465A2900566F8D /* HCAImagePickerController.h */,
-				9AE6E1C61C465A2900566F8D /* HCAImagePickerController.m */,
 				9AE6E1CA1C465A2900566F8D /* HCAPhotosCollectionViewController.h */,
 				9AE6E1CB1C465A2900566F8D /* HCAPhotosCollectionViewController.m */,
 				9AE6E1CC1C465A2900566F8D /* Info.plist */,
@@ -150,7 +144,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AE6E1DB1C465A2900566F8D /* HCAImagePickerController.h in Headers */,
 				9AE6E1E61C465A5D00566F8D /* HCAGalleryImagePicker.h in Headers */,
 				9AE6E1D01C465A2900566F8D /* HCAAssetsLibrary.h in Headers */,
 				9AE6E1D51C465A2900566F8D /* HCAGalleryImagePickerViewController.h in Headers */,
@@ -262,7 +255,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ABE16F71D01B88500A6D46E /* HCAAssetCollection.m in Sources */,
-				9AE6E1DC1C465A2900566F8D /* HCAImagePickerController.m in Sources */,
 				9AE6E1D61C465A2900566F8D /* HCAGalleryImagePickerViewController.m in Sources */,
 				9AE6E1E11C465A2900566F8D /* HCAPhotosCollectionViewController.m in Sources */,
 				9AE6E1CE1C465A2900566F8D /* HCAAlbumTableViewCell.m in Sources */,

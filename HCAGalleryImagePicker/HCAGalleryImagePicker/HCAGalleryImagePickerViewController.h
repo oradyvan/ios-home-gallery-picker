@@ -10,16 +10,22 @@
 
 #import <Photos/Photos.h>
 
-#import "HCAImagePickerController.h"
+NS_ASSUME_NONNULL_BEGIN
 
-typedef NSString * (^HCAImagePickerControllerPromtStringBlock)(NSArray *assets);
+typedef NSString *_Nullable (^HCAImagePickerControllerPromtStringBlock)(NSArray *assets);
+typedef void(^HCAImagePickerSelectionResultBlock)(NSArray<PHAsset *> *_Nullable assets, UIViewController *viewController);
 
 @interface HCAGalleryImagePickerViewController : UINavigationController
 
 @property (copy, nonatomic) HCAImagePickerControllerPromtStringBlock photoSelectionPromtStringBlock;
 @property (copy, nonatomic) HCAImagePickerSelectionResultBlock completeSelectionHandler;
 
-/*In case of cancelation selectionHandler will be performed with (nil, nil)*/
-- (id)initWithSelectionHandler:(HCAImagePickerSelectionResultBlock)selectionHandler;
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+
+/*In case of cancelation completion will be performed with (nil, nil)*/
++ (instancetype)startPickingPhotosFromViewContorller:(UIViewController *)viewController completion:(HCAImagePickerSelectionResultBlock)completion;
 
 @end
+
+NS_ASSUME_NONNULL_END

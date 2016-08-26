@@ -16,20 +16,12 @@
 
 @implementation HCAGalleryImagePickerViewController
 
-- (id)init
++ (instancetype)startPickingPhotosFromViewContorller:(UIViewController *)viewController completion:(HCAImagePickerSelectionResultBlock)completion
 {
-    self = [[UIStoryboard storyboardWithName:@"HCAImagePicker" bundle:[NSBundle bundleWithIdentifier:HCAGalleryImagePickerBundleIdentifier]] instantiateInitialViewController];
-    return self;
-}
-
-- (id)initWithSelectionHandler:(HCAImagePickerSelectionResultBlock)selectionHandler
-{
-    if (self = [self init])
-    {
-        self.completeSelectionHandler = selectionHandler;
-    }
-    
-    return self;
+    HCAGalleryImagePickerViewController *imagePickerViewController = [[UIStoryboard storyboardWithName:@"HCAImagePicker" bundle:[NSBundle bundleWithIdentifier:HCAGalleryImagePickerBundleIdentifier]] instantiateInitialViewController];
+    imagePickerViewController.completeSelectionHandler = completion;
+    [viewController presentViewController:imagePickerViewController animated:YES completion:NULL];
+    return imagePickerViewController;
 }
 
 @end

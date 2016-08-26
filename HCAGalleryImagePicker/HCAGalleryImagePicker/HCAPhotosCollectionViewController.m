@@ -11,6 +11,7 @@
 #import "HCAAssetCollection.h"
 
 #import "HCAGalleryImagePickerViewController.h"
+#import "HCAGalleryImagePicker.h"
 
 #define kHCAPhotosCollectionNumberOfItemsInLine 4
 #define kHCAPhotosCollectionMinimumInteritemSpacing 1
