@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9AE6E19C1C4659E600566F8D"
+               BlueprintIdentifier = "9ACCBFA01D703EE400DD7368"
                BuildableName = "HCAGalleryImagePicker.framework"
                BlueprintName = "HCAGalleryImagePicker"
                ReferencedContainer = "container:HCAGalleryImagePicker.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9AE6E19C1C4659E600566F8D"
+            BlueprintIdentifier = "9ACCBFA01D703EE400DD7368"
             BuildableName = "HCAGalleryImagePicker.framework"
             BlueprintName = "HCAGalleryImagePicker"
             ReferencedContainer = "container:HCAGalleryImagePicker.xcodeproj">
@@ -64,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9AE6E19C1C4659E600566F8D"
+            BlueprintIdentifier = "9ACCBFA01D703EE400DD7368"
             BuildableName = "HCAGalleryImagePicker.framework"
             BlueprintName = "HCAGalleryImagePicker"
             ReferencedContainer = "container:HCAGalleryImagePicker.xcodeproj">
@@ -82,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9AE6E19C1C4659E600566F8D"
+            BlueprintIdentifier = "9ACCBFA01D703EE400DD7368"
             BuildableName = "HCAGalleryImagePicker.framework"
             BlueprintName = "HCAGalleryImagePicker"
             ReferencedContainer = "container:HCAGalleryImagePicker.xcodeproj">
