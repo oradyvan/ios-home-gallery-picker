@@ -59,9 +59,9 @@ extension UIImagePickerController : UIImagePickerControllerDelegate, UINavigatio
 
 public extension UIImagePickerController
 {
-    typealias UIImagePickerCompletionHandler = ((picker: UIImagePickerController, image: UIImage?) -> Void)
+    public typealias UIImagePickerCompletionHandler = ((picker: UIImagePickerController, image: UIImage?) -> Void)
     
-    class func hca_showImagePickerFromViewController(viewController: UIViewController, completion: UIImagePickerCompletionHandler?)
+    public class func hca_showImagePickerFromViewController(viewController: UIViewController, completion: UIImagePickerCompletionHandler?)
     {
         guard UIImagePickerController.isSourceTypeAvailable(.Camera) else
         {
@@ -90,7 +90,7 @@ public extension UIImagePickerController
         viewController.presentViewController(photoOptionsControler, animated: true, completion: nil)
     }
     
-    class func hca_showImagePickerFromViewController(viewController: UIViewController, forSourceType sourceType: UIImagePickerControllerSourceType, completion: UIImagePickerCompletionHandler?)
+    public class func hca_showImagePickerFromViewController(viewController: UIViewController, forSourceType sourceType: UIImagePickerControllerSourceType, completion: UIImagePickerCompletionHandler?)
     {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = imagePicker
