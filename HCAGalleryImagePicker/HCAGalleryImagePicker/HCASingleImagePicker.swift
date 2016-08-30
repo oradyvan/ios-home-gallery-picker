@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 private class ObjectWrapper<T>
 {
@@ -59,13 +60,23 @@ extension UIImagePickerController : UIImagePickerControllerDelegate, UINavigatio
 
 public extension UIImagePickerController
 {
+    enum PickerMode
+    {
+        case ChooseImage
+        case ChooseVideo
+        case ChooseImageOrVideo
+        case TakePhoto
+        case TakeVideo
+        case TakeImageOrVideo
+    }
+    
     public typealias UIImagePickerCompletionHandler = ((picker: UIImagePickerController, image: UIImage?) -> Void)
     
     public class func hca_showImagePickerFromViewController(viewController: UIViewController, completion: UIImagePickerCompletionHandler?)
     {
         guard UIImagePickerController.isSourceTypeAvailable(.Camera) else
         {
-            self.hca_showImagePickerFromViewController(viewController, forSourceType: .SavedPhotosAlbum, completion: completion)
+            self.hca_showMediaPickerFromViewController(viewController, mode: .ChooseImage, completion: completion)
             return
         }
         
@@ -74,12 +85,12 @@ public extension UIImagePickerController
         let chooseExistingAction = UIAlertAction(title: NSLocalizedString("Choose Existing", comment: "HCASingleImagePicker.chooseExisting") , style: .Default)
         {
             action in
-            self.hca_showImagePickerFromViewController(viewController, forSourceType: .SavedPhotosAlbum, completion: completion)
+            self.hca_showMediaPickerFromViewController(viewController, mode: .ChooseImage, completion: completion)
         }
         let takePictureAction = UIAlertAction(title: NSLocalizedString("Take a Picture", comment: "HCASingleImagePicker.takeAPicture"), style: .Default)
         {
             action in
-            self.hca_showImagePickerFromViewController(viewController, forSourceType: .Camera, completion: completion)
+            self.hca_showMediaPickerFromViewController(viewController, mode: .TakePhoto, completion: completion)
         }
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "HCASingleImagePicker.Cancel"), style: .Cancel, handler: nil)
         
@@ -90,11 +101,39 @@ public extension UIImagePickerController
         viewController.presentViewController(photoOptionsControler, animated: true, completion: nil)
     }
     
-    public class func hca_showImagePickerFromViewController(viewController: UIViewController, forSourceType sourceType: UIImagePickerControllerSourceType, completion: UIImagePickerCompletionHandler?)
+    public class func hca_showMediaPickerFromViewController(viewController: UIViewController, mode: PickerMode, completion: UIImagePickerCompletionHandler?)
     {
         let imagePicker = UIImagePickerController()
+        
+        if (mode == .ChooseImage || mode == .ChooseVideo || mode == .ChooseImageOrVideo)
+        {
+            imagePicker.videoQuality = .TypeHigh
+            
+            if (UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
+            {
+                imagePicker.sourceType = .PhotoLibrary
+            }
+            else if (UIImagePickerController.isSourceTypeAvailable(.SavedPhotosAlbum))
+            {
+                imagePicker.sourceType = .SavedPhotosAlbum
+            }
+        }
+        else
+        {
+            imagePicker.videoQuality = .TypeMedium
+            imagePicker.sourceType = .Camera
+        }
+        
+        if (mode == .ChooseImageOrVideo) || (mode == .TakeImageOrVideo)
+        {
+            imagePicker.mediaTypes = [String(kUTTypeMovie), String(kUTTypeImage)]
+        }
+        else if (mode == .ChooseVideo) || (mode == .TakeVideo)
+        {
+            imagePicker.mediaTypes = [String(kUTTypeMovie)]
+        }
+        
         imagePicker.delegate = imagePicker
-        imagePicker.sourceType = sourceType
         imagePicker.allowsEditing = true
         imagePicker.hca_completion = completion
         viewController.presentViewController(imagePicker, animated: true, completion: nil)

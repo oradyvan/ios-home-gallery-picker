@@ -16,6 +16,8 @@
 @property (nonatomic, strong, readonly) PHAsset *lastAsset; // Latest by creationDate 
 @property (nonatomic, assign, readonly) NSUInteger assetCount;
 
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 - (instancetype)initWithCollection:(PHAssetCollection *)collection assets:(PHFetchResult *)assets NS_DESIGNATED_INITIALIZER;
 
 + (PHFetchOptions *)defaultAssetsFetchOptions;
