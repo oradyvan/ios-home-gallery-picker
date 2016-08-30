@@ -17,3 +17,4 @@ FOUNDATION_EXPORT const unsigned char HCAGalleryImagePickerVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <HCAGalleryImagePicker/PublicHeader.h>
 
 #import <HCAGalleryImagePicker/HCAGalleryImagePickerViewController.h>
+#import <HCAGalleryImagePicker/UIImage+UIImagePicker.h>

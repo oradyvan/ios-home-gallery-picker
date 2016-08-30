@@ -47,14 +47,46 @@ extension UIImagePickerController : UIImagePickerControllerDelegate, UINavigatio
     
     public func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
-        let image = info[UIImagePickerControllerEditedImage] as? UIImage
+        // what is the media type
+        guard let mediaType = info[UIImagePickerControllerMediaType] as? NSString else
+        {
+            self.hca_completion?(picker: picker, result: .None)
+            return
+        }
         
-        self.hca_completion?(picker: picker, image: image)
+        if (UTTypeEqual(mediaType, kUTTypeMovie))
+        {
+            // video
+            guard let videoURL = info[UIImagePickerControllerMediaURL] as? NSURL else
+            {
+                self.hca_completion?(picker: picker, result: .None)
+                return
+            }
+            
+            self.hca_completion?(picker: picker, result: .Video(videoURL))
+            return
+        }
+        else if (UTTypeEqual(mediaType, kUTTypeImage))
+        {
+            // photo
+            UIImage.io_imageForImagePickerInfo(info)
+            {
+                (image : UIImage!) in
+             
+                guard let image = image else
+                {
+                    self.hca_completion?(picker: picker, result: .None)
+                    return
+                }
+                
+                self.hca_completion?(picker: picker, result: .Image(image))
+            }
+        }
     }
     
     public func imagePickerControllerDidCancel(picker: UIImagePickerController)
     {
-        self.hca_completion?(picker: picker, image: nil)
+        self.hca_completion?(picker: picker, result: .None)
     }
 }
 
@@ -70,7 +102,14 @@ public extension UIImagePickerController
         case TakeImageOrVideo
     }
     
-    public typealias UIImagePickerCompletionHandler = ((picker: UIImagePickerController, image: UIImage?) -> Void)
+    public enum PickerResult
+    {
+        case Image(UIImage)
+        case Video(NSURL)
+        case None
+    }
+    
+    public typealias UIImagePickerCompletionHandler = ((picker: UIImagePickerController, result: PickerResult) -> Void)
     
     public class func hca_showImagePickerFromViewController(viewController: UIViewController, completion: UIImagePickerCompletionHandler?)
     {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0378851D7580B400A14C9D /* UIImage+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0378811D7580B400A14C9D /* UIImage+Additions.h */; };
+		9A0378861D7580B400A14C9D /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0378821D7580B400A14C9D /* UIImage+Additions.m */; };
+		9A0378871D7580B400A14C9D /* UIImage+UIImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0378831D7580B400A14C9D /* UIImage+UIImagePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A0378881D7580B400A14C9D /* UIImage+UIImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0378841D7580B400A14C9D /* UIImage+UIImagePicker.m */; };
 		9A730FC81D703F1700325910 /* HCASingleImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC87B11D7028EB00FF7A72 /* HCASingleImagePicker.swift */; };
 		9A730FCA1D703F2E00325910 /* HCAAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AE6E1B91C465A2900566F8D /* HCAAssets.xcassets */; };
 		9A730FCB1D703F3700325910 /* HCAAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6E1B81C465A2900566F8D /* HCAAlbumTableViewCell.m */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A0378811D7580B400A14C9D /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		9A0378821D7580B400A14C9D /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		9A0378831D7580B400A14C9D /* UIImage+UIImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImagePicker.h"; sourceTree = "<group>"; };
+		9A0378841D7580B400A14C9D /* UIImage+UIImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImagePicker.m"; sourceTree = "<group>"; };
 		9ABC87B11D7028EB00FF7A72 /* HCASingleImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCASingleImagePicker.swift; sourceTree = "<group>"; };
 		9ABE16F41D01B88500A6D46E /* HCAAssetCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCAAssetCollection.h; sourceTree = "<group>"; };
 		9ABE16F51D01B88500A6D46E /* HCAAssetCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCAAssetCollection.m; sourceTree = "<group>"; };
@@ -74,6 +82,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A0378801D7580B400A14C9D /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				9A0378811D7580B400A14C9D /* UIImage+Additions.h */,
+				9A0378821D7580B400A14C9D /* UIImage+Additions.m */,
+				9A0378831D7580B400A14C9D /* UIImage+UIImagePicker.h */,
+				9A0378841D7580B400A14C9D /* UIImage+UIImagePicker.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
 		9AE6E1931C4659E600566F8D = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +114,7 @@
 		9AE6E19F1C4659E600566F8D /* HCAGalleryImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				9A0378801D7580B400A14C9D /* UIImage */,
 				9ABC87B11D7028EB00FF7A72 /* HCASingleImagePicker.swift */,
 				9AE6E1E41C465A5D00566F8D /* HCAGalleryImagePicker.h */,
 				9AE6E1B71C465A2900566F8D /* HCAAlbumTableViewCell.h */,
@@ -139,9 +159,11 @@
 				9A730FD61D703F5200325910 /* HCAImageCollectionViewCell.h in Headers */,
 				9A730FDB1D703FED00325910 /* HCAGalleryImagePicker.h in Headers */,
 				9A730FDA1D703F5A00325910 /* HCAGalleryAlbumsViewController.h in Headers */,
+				9A0378871D7580B400A14C9D /* UIImage+UIImagePicker.h in Headers */,
 				9A730FD91D703F5A00325910 /* HCAAssetsLibrary.h in Headers */,
 				9A730FD51D703F4200325910 /* HCAPhotosCollectionViewController.h in Headers */,
 				9A730FD81D703F5A00325910 /* HCAAlbumTableViewCell.h in Headers */,
+				9A0378851D7580B400A14C9D /* UIImage+Additions.h in Headers */,
 				9A730FD41D703F3A00325910 /* HCAAssetCollection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,10 +271,12 @@
 				9A730FD21D703F3700325910 /* HCAPhotosCollectionViewController.m in Sources */,
 				9A730FCD1D703F3700325910 /* HCAGalleryAlbumsViewController.m in Sources */,
 				9A730FCB1D703F3700325910 /* HCAAlbumTableViewCell.m in Sources */,
+				9A0378861D7580B400A14C9D /* UIImage+Additions.m in Sources */,
 				9A730FC81D703F1700325910 /* HCASingleImagePicker.swift in Sources */,
 				9A730FCC1D703F3700325910 /* HCAAssetsLibrary.m in Sources */,
 				9A730FCF1D703F3700325910 /* HCAImageCollectionViewCell.m in Sources */,
 				9A730FD31D703F3700325910 /* HCAAssetCollection.m in Sources */,
+				9A0378881D7580B400A14C9D /* UIImage+UIImagePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
