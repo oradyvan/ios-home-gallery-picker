@@ -27,7 +27,6 @@
 		9A730FD61D703F5200325910 /* HCAImageCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1C11C465A2900566F8D /* HCAImageCollectionViewCell.h */; };
 		9A730FD71D703F5400325910 /* HCAGalleryImagePickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1BF1C465A2900566F8D /* HCAGalleryImagePickerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A730FD81D703F5A00325910 /* HCAAlbumTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1B71C465A2900566F8D /* HCAAlbumTableViewCell.h */; };
-		9A730FD91D703F5A00325910 /* HCAAssetsLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1BA1C465A2900566F8D /* HCAAssetsLibrary.h */; };
 		9A730FDA1D703F5A00325910 /* HCAGalleryAlbumsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1BC1C465A2900566F8D /* HCAGalleryAlbumsViewController.h */; };
 		9A730FDB1D703FED00325910 /* HCAGalleryImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE6E1E41C465A5D00566F8D /* HCAGalleryImagePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9AE6E1AD1C4659E600566F8D /* HCAGalleryImagePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6E1AC1C4659E600566F8D /* HCAGalleryImagePickerTests.m */; };
@@ -160,7 +159,6 @@
 				9A730FDB1D703FED00325910 /* HCAGalleryImagePicker.h in Headers */,
 				9A730FDA1D703F5A00325910 /* HCAGalleryAlbumsViewController.h in Headers */,
 				9A0378871D7580B400A14C9D /* UIImage+UIImagePicker.h in Headers */,
-				9A730FD91D703F5A00325910 /* HCAAssetsLibrary.h in Headers */,
 				9A730FD51D703F4200325910 /* HCAPhotosCollectionViewController.h in Headers */,
 				9A730FD81D703F5A00325910 /* HCAAlbumTableViewCell.h in Headers */,
 				9A0378851D7580B400A14C9D /* UIImage+Additions.h in Headers */,
