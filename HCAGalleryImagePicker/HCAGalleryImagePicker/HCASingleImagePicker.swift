@@ -60,7 +60,7 @@ extension UIImagePickerController : UIImagePickerControllerDelegate, UINavigatio
 
 public extension UIImagePickerController
 {
-    enum PickerMode
+    public enum PickerMode
     {
         case ChooseImage
         case ChooseVideo
