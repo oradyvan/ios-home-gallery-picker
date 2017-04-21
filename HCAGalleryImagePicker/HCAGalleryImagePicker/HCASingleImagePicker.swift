@@ -19,7 +19,7 @@ private class ObjectWrapper<T>
     }
 }
 
-let UIImagePickerControllerAssociatedObjectKey = UnsafeMutablePointer<Int8>.alloc(1)
+let UIImagePickerControllerAssociatedObjectKey = UnsafeMutablePointer<Int8>.allocate(capacity: 1)
 
 extension UIImagePickerController : UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
@@ -45,48 +45,48 @@ extension UIImagePickerController : UIImagePickerControllerDelegate, UINavigatio
         }
     }
     
-    public func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
         // what is the media type
         guard let mediaType = info[UIImagePickerControllerMediaType] as? NSString else
         {
-            self.hca_completion?(picker: picker, result: .None)
+            self.hca_completion?(picker, .none)
             return
         }
         
         if (UTTypeEqual(mediaType, kUTTypeMovie))
         {
             // video
-            guard let videoURL = info[UIImagePickerControllerMediaURL] as? NSURL else
+            guard let videoURL = info[UIImagePickerControllerMediaURL] as? URL else
             {
-                self.hca_completion?(picker: picker, result: .None)
+                self.hca_completion?(picker, .none)
                 return
             }
             
-            self.hca_completion?(picker: picker, result: .Video(videoURL))
+            self.hca_completion?(picker, .video(videoURL))
             return
         }
         else if (UTTypeEqual(mediaType, kUTTypeImage))
         {
             // photo
-            UIImage.io_imageForImagePickerInfo(info)
+            UIImage.io_image(forImagePickerInfo: info)
             {
                 (image : UIImage!) in
              
                 guard let image = image else
                 {
-                    self.hca_completion?(picker: picker, result: .None)
+                    self.hca_completion?(picker, .none)
                     return
                 }
                 
-                self.hca_completion?(picker: picker, result: .Image(image))
+                self.hca_completion?(picker, .image(image))
             }
         }
     }
     
-    public func imagePickerControllerDidCancel(picker: UIImagePickerController)
+    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
     {
-        self.hca_completion?(picker: picker, result: .None)
+        self.hca_completion?(picker, .none)
     }
 }
 
@@ -94,80 +94,80 @@ public extension UIImagePickerController
 {
     public enum PickerMode
     {
-        case ChooseImage
-        case ChooseVideo
-        case ChooseImageOrVideo
-        case TakePhoto
-        case TakeVideo
-        case TakeImageOrVideo
+        case chooseImage
+        case chooseVideo
+        case chooseImageOrVideo
+        case takePhoto
+        case takeVideo
+        case takeImageOrVideo
     }
     
     public enum PickerResult
     {
-        case Image(UIImage)
-        case Video(NSURL)
-        case None
+        case image(UIImage)
+        case video(URL)
+        case none
     }
     
-    public typealias UIImagePickerCompletionHandler = ((picker: UIImagePickerController, result: PickerResult) -> Void)
+    public typealias UIImagePickerCompletionHandler = ((_ picker: UIImagePickerController, _ result: PickerResult) -> Void)
     
-    public class func hca_showImagePickerFromViewController(viewController: UIViewController, completion: UIImagePickerCompletionHandler?)
+    public class func hca_showImagePickerFromViewController(_ viewController: UIViewController, completion: UIImagePickerCompletionHandler?)
     {
-        guard UIImagePickerController.isSourceTypeAvailable(.Camera) else
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else
         {
-            self.hca_showMediaPickerFromViewController(viewController, mode: .ChooseImage, completion: completion)
+            self.hca_showMediaPickerFromViewController(viewController, mode: .chooseImage, completion: completion)
             return
         }
         
         let photoOptionsControler = UIAlertController()
         
-        let chooseExistingAction = UIAlertAction(title: NSLocalizedString("Choose Existing", comment: "HCASingleImagePicker.chooseExisting") , style: .Default)
+        let chooseExistingAction = UIAlertAction(title: NSLocalizedString("Choose Existing", comment: "HCASingleImagePicker.chooseExisting") , style: .default)
         {
             action in
-            self.hca_showMediaPickerFromViewController(viewController, mode: .ChooseImage, completion: completion)
+            self.hca_showMediaPickerFromViewController(viewController, mode: .chooseImage, completion: completion)
         }
-        let takePictureAction = UIAlertAction(title: NSLocalizedString("Take a Picture", comment: "HCASingleImagePicker.takeAPicture"), style: .Default)
+        let takePictureAction = UIAlertAction(title: NSLocalizedString("Take a Picture", comment: "HCASingleImagePicker.takeAPicture"), style: .default)
         {
             action in
-            self.hca_showMediaPickerFromViewController(viewController, mode: .TakePhoto, completion: completion)
+            self.hca_showMediaPickerFromViewController(viewController, mode: .takePhoto, completion: completion)
         }
-        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "HCASingleImagePicker.Cancel"), style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "HCASingleImagePicker.Cancel"), style: .cancel, handler: nil)
         
         photoOptionsControler.addAction(chooseExistingAction)
         photoOptionsControler.addAction(takePictureAction)
         photoOptionsControler.addAction(cancelAction)
         
-        viewController.presentViewController(photoOptionsControler, animated: true, completion: nil)
+        viewController.present(photoOptionsControler, animated: true, completion: nil)
     }
     
-    public class func hca_showMediaPickerFromViewController(viewController: UIViewController, mode: PickerMode, completion: UIImagePickerCompletionHandler?)
+    public class func hca_showMediaPickerFromViewController(_ viewController: UIViewController, mode: PickerMode, completion: UIImagePickerCompletionHandler?)
     {
         let imagePicker = UIImagePickerController()
         
-        if (mode == .ChooseImage || mode == .ChooseVideo || mode == .ChooseImageOrVideo)
+        if (mode == .chooseImage || mode == .chooseVideo || mode == .chooseImageOrVideo)
         {
-            imagePicker.videoQuality = .TypeHigh
+            imagePicker.videoQuality = .typeHigh
             
-            if (UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary))
+            if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary))
             {
-                imagePicker.sourceType = .PhotoLibrary
+                imagePicker.sourceType = .photoLibrary
             }
-            else if (UIImagePickerController.isSourceTypeAvailable(.SavedPhotosAlbum))
+            else if (UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum))
             {
-                imagePicker.sourceType = .SavedPhotosAlbum
+                imagePicker.sourceType = .savedPhotosAlbum
             }
         }
         else
         {
-            imagePicker.videoQuality = .TypeMedium
-            imagePicker.sourceType = .Camera
+            imagePicker.videoQuality = .typeMedium
+            imagePicker.sourceType = .camera
         }
         
-        if (mode == .ChooseImageOrVideo) || (mode == .TakeImageOrVideo)
+        if (mode == .chooseImageOrVideo) || (mode == .takeImageOrVideo)
         {
             imagePicker.mediaTypes = [String(kUTTypeMovie), String(kUTTypeImage)]
         }
-        else if (mode == .ChooseVideo) || (mode == .TakeVideo)
+        else if (mode == .chooseVideo) || (mode == .takeVideo)
         {
             imagePicker.mediaTypes = [String(kUTTypeMovie)]
         }
@@ -175,6 +175,6 @@ public extension UIImagePickerController
         imagePicker.delegate = imagePicker
         imagePicker.allowsEditing = true
         imagePicker.hca_completion = completion
-        viewController.presentViewController(imagePicker, animated: true, completion: nil)
+        viewController.present(imagePicker, animated: true, completion: nil)
     }
 }
